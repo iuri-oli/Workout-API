@@ -1,4 +1,4 @@
-# Workout-API
+# Workout
 
 Este repositório contém uma API RESTful desenvolvida com FastAPI para gerenciar categorias de treino, centros de treinamento e atletas. A API permite a criação, listagem, recuperação, atualização e exclusão de dados relacionados a esses modelos.
 
