@@ -12,6 +12,10 @@ app = FastAPI(title="WorkoutAPI")
 # Criar tabelas ao iniciar
 Base.metadata.create_all(bind=engine)
 
+@app.get("/")
+def root():
+    return {"message": "API funcionando"}
+
 # --- Rotas de Categorias ---
 @app.post("/categorias", response_model=CategoriaOut, status_code=status.HTTP_201_CREATED)
 def create_categoria(categoria: CategoriaIn, db: Session = Depends(get_db)):
