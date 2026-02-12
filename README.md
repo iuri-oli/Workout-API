@@ -24,25 +24,14 @@ O projeto está organizado na seguinte estrutura de diretórios:
 
 Siga os passos abaixo para configurar e executar o projeto localmente:
 
-### Pré-requisitos
-
-Certifique-se de ter o Python 3.9+ e `pip` instalados em seu sistema.
-
-### 1. Clonar o Repositório
-
-```bash
-git clone https://github.com/iuri-oli/Workout-API.git
-cd Workout-API
-```
-
-### 2. Criar e Ativar um Ambiente Virtual
+### 1. Criar e Ativar um Ambiente Virtual
 
 É altamente recomendável usar um ambiente virtual para gerenciar as dependências do projeto.
 
 ```bash
-python -m venv venv
-source venv/bin/activate  # No Linux/macOS
-# venv\Scripts\activate  # No Windows
+python -m venv .venv
+venv\Scripts\activate  # No Windows
+# source venv/bin/activate  # No Linux/macOS
 ```
 
 ### 3. Instalar as Dependências
@@ -50,19 +39,15 @@ source venv/bin/activate  # No Linux/macOS
 Instale todas as bibliotecas necessárias listadas no `requirements.txt`:
 
 ```bash
-pip install -r Workout_API/requirements.txt
+pip install -r requirements.txt
 ```
 
-### 4. Inicializar o Banco de Dados
-
-As tabelas do banco de dados serão criadas automaticamente na primeira execução da aplicação, devido à linha `Base.metadata.create_all(bind=engine)` em `main.py`.
-
-### 5. Executar a Aplicação
+### 4. Executar a Aplicação
 
 Inicie o servidor Uvicorn a partir do diretório raiz do projeto:
 
 ```bash
-uvicorn Workout_API.main:app --reload
+uvicorn main:app --reload
 ```
 
 A API estará disponível em `http://127.0.0.1:8000`. Você pode acessar a documentação interativa (Swagger UI) em `http://127.0.0.1:8000/docs`.
